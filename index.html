@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Divas del Norte | Salón · Spa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+
+<button id="themeToggle" class="theme-toggle" aria-label="Cambiar entre modo claro y oscuro" title="Cambiar tema">🌙</button>
+
+<header class="header" id="inicio">
+  <nav class="nav">
+    <div class="logo-wrap">
+      <img src="logo.jpg" alt="Divas del Norte Salón Spa" class="logo-img">
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio" class="nav-link">Inicio</a></li>
+      <li><a href="#servicios" class="nav-link">Servicios</a></li>
+      <li><a href="#reserva" class="nav-link">Reserva</a></li>
+      <li><a href="#contacto" class="nav-link">Contacto</a></li>
+      <li><a href="#ubicacion" class="nav-link">Ubicación</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="compass-deco" aria-hidden="true">
+      <svg viewBox="0 0 200 200" class="compass-svg">
+        <circle cx="100" cy="100" r="92" class="compass-ring"></circle>
+        <g class="compass-needle">
+          <polygon points="100,14 112,100 100,110 88,100" class="needle-gold"></polygon>
+          <polygon points="100,186 112,100 100,90 88,100" class="needle-light"></polygon>
+          <polygon points="14,100 100,88 110,100 100,112" class="needle-light"></polygon>
+          <polygon points="186,100 100,88 90,100 100,112" class="needle-gold"></polygon>
+        </g>
+        <circle cx="100" cy="100" r="7" class="compass-center"></circle>
+      </svg>
+    </div>
+
+    <p class="eyebrow">S A L Ó N &nbsp;·&nbsp; S P A</p>
+    <h1 class="hero-title">Divas del Norte</h1>
+    <p class="hero-script">By Daniela Gonzales</p>
+    <p class="hero-text">Un espacio delicado para realzar tu belleza natural.<br>Reserva tu cita en pocos minutos, desde donde estés.</p>
+    <a href="#reserva" class="btn-primary">Reservar mi cita</a>
+
+    <div class="guia">
+      💡 <strong>Guía rápida:</strong> usa el menú superior para moverte entre secciones, y el botón 🌙 / ☀️ (arriba a la derecha) para cambiar entre modo claro y oscuro.
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="servicios" class="section">
+    <p class="eyebrow center">N U E S T R O S &nbsp;·&nbsp; S E R V I C I O S</p>
+    <h2 class="section-title">Servicios</h2>
+    <div class="guia center">
+      💡 Elige el servicio que más te guste. Podrás seleccionar el mismo servicio dentro del formulario de reserva.
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card">
+        <h3>Manicure Clásica</h3>
+        <p class="service-desc">Limado, cutícula y esmaltado tradicional.</p>
+        <p class="service-price">C$350</p>
+      </article>
+      <article class="service-card">
+        <h3>Pedicure Spa</h3>
+        <p class="service-desc">Exfoliación, hidratación profunda y masaje relajante.</p>
+        <p class="service-price">C$450</p>
+      </article>
+      <article class="service-card">
+        <h3>Corte y Peinado</h3>
+        <p class="service-desc">Corte personalizado y peinado profesional.</p>
+        <p class="service-price">C$500</p>
+      </article>
+      <article class="service-card">
+        <h3>Maquillaje Profesional</h3>
+        <p class="service-desc">Maquillaje social o de novia, look duradero.</p>
+        <p class="service-price">C$700</p>
+      </article>
+      <article class="service-card">
+        <h3>Tratamiento Facial</h3>
+        <p class="service-desc">Limpieza profunda, hidratación y luminosidad.</p>
+        <p class="service-price">C$600</p>
+      </article>
+      <article class="service-card">
+        <h3>Masaje Relajante</h3>
+        <p class="service-desc">Masaje corporal para liberar tensión y estrés.</p>
+        <p class="service-price">C$800</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="reserva" class="section alt">
+    <p class="eyebrow center">R E S E R V A &nbsp;·&nbsp; T U &nbsp;·&nbsp; C I T A</p>
+    <h2 class="section-title">Reserva tu cita</h2>
+    <div class="guia center">
+      💡 Completa tus datos, elige servicio, fecha y horario. Al confirmar verás el mensaje "Cita reservada" con el resumen de tu cita.
+    </div>
+
+    <form id="bookingForm" class="booking-form" novalidate>
+
+      <div class="form-group">
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Ej. María Fernández" autocomplete="name">
+        <span class="error-msg" id="errorNombre"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com" autocomplete="email">
+        <span class="error-msg" id="errorEmail"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="fecha">Fecha</label>
+        <input type="date" id="fecha" name="fecha" required>
+        <span class="error-msg" id="errorFecha"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="servicio">Servicio</label>
+        <select id="servicio" name="servicio" required>
+          <option value="" data-price="0">Selecciona un servicio</option>
+          <option value="Manicure Clásica" data-price="350">Manicure Clásica — C$350</option>
+          <option value="Pedicure Spa" data-price="450">Pedicure Spa — C$450</option>
+          <option value="Corte y Peinado" data-price="500">Corte y Peinado — C$500</option>
+          <option value="Maquillaje Profesional" data-price="700">Maquillaje Profesional — C$700</option>
+          <option value="Tratamiento Facial" data-price="600">Tratamiento Facial — C$600</option>
+          <option value="Masaje Relajante" data-price="800">Masaje Relajante — C$800</option>
+        </select>
+        <span class="error-msg" id="errorServicio"></span>
+      </div>
+
+      <div class="form-group">
+        <label>Horario</label>
+        <div class="time-groups">
+          <div class="time-group">
+            <span class="time-label">Mañana</span>
+            <div class="time-buttons">
+              <button type="button" class="time-btn" data-time="09:00">09:00</button>
+              <button type="button" class="time-btn" data-time="10:00">10:00</button>
+              <button type="button" class="time-btn" data-time="11:00">11:00</button>
+            </div>
+          </div>
+          <div class="time-group">
+            <span class="time-label">Tarde</span>
+            <div class="time-buttons">
+              <button type="button" class="time-btn" data-time="13:00">13:00</button>
+              <button type="button" class="time-btn" data-time="14:00">14:00</button>
+              <button type="button" class="time-btn" data-time="15:00">15:00</button>
+              <button type="button" class="time-btn" data-time="16:00">16:00</button>
+              <button type="button" class="time-btn" data-time="17:00">17:00</button>
+              <button type="button" class="time-btn" data-time="18:00">18:00</button>
+            </div>
+          </div>
+          <div class="time-group">
+            <span class="time-label">Noche</span>
+            <div class="time-buttons">
+              <button type="button" class="time-btn" data-time="19:00">19:00</button>
+              <button type="button" class="time-btn" data-time="20:00">20:00</button>
+            </div>
+          </div>
+        </div>
+        <span class="error-msg" id="errorHora"></span>
+      </div>
+
+      <div class="deposit-box">
+        <p>Anticipo requerido para confirmar (30%)</p>
+        <p class="deposit-amount" id="depositAmount">C$0</p>
+      </div>
+
+      <button type="submit" class="btn-primary full">Confirmar reserva</button>
+    </form>
+  </section>
+
+  <section id="contacto" class="section">
+    <p class="eyebrow center">E S C R Í B E N O S</p>
+    <h2 class="section-title">Contacto</h2>
+    <div class="guia center">
+      💡 Escríbenos por WhatsApp o llama directamente para consultas, cambios de horario o dudas sobre tu cita.
+    </div>
+
+    <div class="contact-grid">
+      <a class="contact-card" href="tel:+50560042152">
+        <span class="contact-icon">📞</span>
+        <h3>Llámanos</h3>
+        <p>6004-2152</p>
+      </a>
+      <a class="contact-card" href="https://wa.me/50560042152" target="_blank" rel="noopener">
+        <span class="contact-icon">💬</span>
+        <h3>WhatsApp</h3>
+        <p>6004-2152</p>
+      </a>
+      <div class="contact-card">
+        <span class="contact-icon">🕐</span>
+        <h3>Horario de atención</h3>
+        <p>Lun – Sáb · 9:00 am – 8:00 pm</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="ubicacion" class="section alt">
+    <p class="eyebrow center">V I S Í T A N O S</p>
+    <h2 class="section-title">Ubicación</h2>
+    <div class="guia center">
+      💡 Aquí encuentras el mapa y la dirección exacta del salón. Puedes tocar el mapa para abrir la ruta.
+    </div>
+
+    <div class="location-wrap">
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps?q=Nicaragua&output=embed"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade" title="Ubicación Divas del Norte">
+        </iframe>
+      </div>
+      <div class="address-box">
+        <h3>Divas del Norte Salón · Spa</h3>
+        <p>[ Reemplaza con tu dirección exacta ]</p>
+        <p>Nicaragua</p>
+        <p>📞 6004-2152</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <img src="logo.jpg" alt="Divas del Norte" class="footer-logo">
+  <p class="footer-script">Divas del Norte</p>
+  <p class="footer-text">Salón · Spa — By Daniela Gonzales</p>
+  <p class="footer-copy">© <span id="year"></span> Divas del Norte. Todos los derechos reservados.</p>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-icon">✓</div>
+    <h3>Cita reservada</h3>
+    <div id="modalDetails" class="modal-details"></div>
+    <p class="modal-note">Te contactaremos para confirmar el pago del anticipo (30%).</p>
+    <button id="modalClose" class="btn-primary">Cerrar</button>
+  </div>
+</div>
+
+<script>
+  // ----- Tema claro / oscuro -----
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  themeToggle.addEventListener('click', () => {
+    const isDark = body.getAttribute('data-theme') === 'dark';
+    body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    themeToggle.textContent = isDark ? '🌙' : '☀️';
+  });
+
+  // ----- Permiso de notificaciones del navegador -----
+  if ('Notification' in window && Notification.permission !== 'granted' && Notification.permission !== 'denied') {
+    Notification.requestPermission();
+  }
+
+  // ----- Menú móvil -----
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
+  });
+
+  // ----- Año en el footer -----
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ----- Fecha mínima = hoy -----
+  const fechaInput = document.getElementById('fecha');
+  const hoy = new Date();
+  const yyyy = hoy.getFullYear();
+  const mm = String(hoy.getMonth() + 1).padStart(2, '0');
+  const dd = String(hoy.getDate()).padStart(2, '0');
+  fechaInput.min = `${yyyy}-${mm}-${dd}`;
+
+  // ----- Nombre: no permitir números -----
+  const nombreInput = document.getElementById('nombre');
+  nombreInput.addEventListener('keypress', (e) => {
+    const soloLetras = /^[a-zA-ZÁÉÍÓÚáéíóúÑñ\s]+$/;
+    if (!soloLetras.test(e.key)) e.preventDefault();
+  });
+  nombreInput.addEventListener('input', () => {
+    nombreInput.value = nombreInput.value.replace(/[^a-zA-ZÁÉÍÓÚáéíóúÑñ\s]/g, '');
+  });
+
+  // ----- Selección de servicio -> tarjetas de servicios rellenan el select -----
+  const servicioSelect = document.getElementById('servicio');
+  document.querySelectorAll('.service-card').forEach(card => {
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', () => {
+      const nombreServicio = card.querySelector('h3').textContent.trim();
+      for (const option of servicioSelect.options) {
+        if (option.value === nombreServicio) {
+          servicioSelect.value = nombreServicio;
+          actualizarAnticipo();
+          document.getElementById('reserva').scrollIntoView({ behavior: 'smooth' });
+          break;
+        }
+      }
+    });
+  });
+
+  // ----- Anticipo 30% dinámico -----
+  const depositAmount = document.getElementById('depositAmount');
+  function actualizarAnticipo() {
+    const selected = servicioSelect.options[servicioSelect.selectedIndex];
+    const price = parseFloat(selected.getAttribute('data-price')) || 0;
+    const anticipo = Math.round(price * 0.3);
+    depositAmount.textContent = `C$${anticipo}`;
+  }
+  servicioSelect.addEventListener('change', actualizarAnticipo);
+
+  // ----- Selección de horario -----
+  const timeButtons = document.querySelectorAll('.time-btn');
+  const horaInput = document.getElementById('horaSeleccionada');
+  timeButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      timeButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      horaInput.value = btn.getAttribute('data-time');
+    });
+  });
+
+  // ----- Envío del formulario -----
+  const form = document.getElementById('bookingForm');
+  const modalOverlay = document.getElementById('modalOverlay');
+  const modalDetails = document.getElementById('modalDetails');
+  const modalClose = document.getElementById('modalClose');
+
+  function mostrarError(id, mensaje) {
+    document.getElementById(id).textContent = mensaje;
+  }
+  function limpiarErrores() {
+    document.querySelectorAll('.error-msg').forEach(el => el.textContent = '');
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    limpiarErrores();
+
+    const nombre = nombreInput.value.trim();
+    const email = document.getElementById('email').value.trim();
+    const fecha = fechaInput.value;
+    const servicio = servicioSelect.value;
+    const hora = horaInput.value;
+
+    let valido = true;
+
+    if (nombre.length < 3) {
+      mostrarError('errorNombre', 'Ingresa tu nombre completo.');
+      valido = false;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      mostrarError('errorEmail', 'Ingresa un correo válido.');
+      valido = false;
+    }
+    if (!fecha) {
+      mostrarError('errorFecha', 'Selecciona una fecha.');
+      valido = false;
+    }
+    if (!servicio) {
+      mostrarError('errorServicio', 'Selecciona un servicio.');
+      valido = false;
+    }
+    if (!hora) {
+      mostrarError('errorHora', 'Selecciona un horario.');
+      valido = false;
+    }
+
+    if (!valido) return;
+
+    const selectedOption = servicioSelect.options[servicioSelect.selectedIndex];
+    const price = parseFloat(selectedOption.getAttribute('data-price')) || 0;
+    const anticipo = Math.round(price * 0.3);
+    const fechaFormateada = new Date(fecha + 'T00:00:00').toLocaleDateString('es-NI', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+
+    modalDetails.innerHTML = `
+      <p><strong>Nombre:</strong> ${nombre}</p>
+      <p><strong>Servicio:</strong> ${servicio}</p>
+      <p><strong>Fecha:</strong> ${fechaFormateada}</p>
+      <p><strong>Hora:</strong> ${hora}</p>
+      <p><strong>Anticipo (30%):</strong> C$${anticipo}</p>
+    `;
+    modalOverlay.classList.add('open');
+
+    // ----- Notificación de "Cita reservada" -----
+    if ('Notification' in window && Notification.permission === 'granted') {
+      new Notification('✅ Cita reservada', {
+        body: `${nombre} — ${servicio}\n${fechaFormateada} a las ${hora}`,
+        icon: 'logo.jpg'
+      });
+    }
+
+    form.reset();
+    timeButtons.forEach(b => b.classList.remove('active'));
+    depositAmount.textContent = 'C$0';
+    fechaInput.min = `${yyyy}-${mm}-${dd}`;
+  });
+
+  modalClose.addEventListener('click', () => modalOverlay.classList.remove('open'));
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) modalOverlay.classList.remove('open');
+  });
+</script>
+</body>
+</html>
